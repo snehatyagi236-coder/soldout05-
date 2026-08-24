@@ -3,15 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Soldout05 Clothing Brand</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
   font-family:Arial,sans-serif;
@@ -24,15 +19,11 @@ header{
   color:white;
   text-align:center;
   padding:25px 10px;
-  position:sticky;
-  top:0;
-  z-index:10;
 }
 
 .logo{
-  font-size:35px;
+  font-size:34px;
   font-weight:bold;
-  letter-spacing:2px;
 }
 
 nav{
@@ -42,18 +33,17 @@ nav{
 nav a{
   color:white;
   text-decoration:none;
-  margin:0 15px;
-  font-size:17px;
+  margin:0 12px;
 }
 
 .hero{
   background:white;
   text-align:center;
-  padding:70px 20px;
+  padding:65px 20px;
 }
 
 .hero h1{
-  font-size:42px;
+  font-size:40px;
   margin-bottom:15px;
 }
 
@@ -62,62 +52,60 @@ nav a{
   margin-bottom:25px;
 }
 
-.shop-btn{
+.shop{
   display:inline-block;
   background:#111;
   color:white;
-  padding:15px 35px;
+  padding:14px 30px;
   border-radius:8px;
   text-decoration:none;
-  font-weight:bold;
 }
 
 .products{
-  padding:50px 20px;
+  padding:45px 18px;
   max-width:1200px;
   margin:auto;
 }
 
 .products h2{
   text-align:center;
-  font-size:35px;
-  margin-bottom:35px;
+  font-size:34px;
+  margin-bottom:30px;
 }
 
-.product-grid{
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+  gap:22px;
 }
 
-.product{
+.card{
   background:white;
-  border-radius:15px;
-  padding:15px;
+  border-radius:14px;
+  padding:14px;
   text-align:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  box-shadow:0 3px 12px #0002;
 }
 
-.product img{
+.card img{
   width:100%;
   height:300px;
   object-fit:cover;
   border-radius:10px;
-  background:#ddd;
 }
 
-.product h3{
+.card h3{
   margin:15px 0 8px;
-  font-size:22px;
+  font-size:21px;
 }
 
 .price{
-  font-size:22px;
+  font-size:21px;
   font-weight:bold;
-  margin-bottom:15px;
+  margin-bottom:14px;
 }
 
-.buy-btn{
+.buy{
   display:inline-block;
   background:#111;
   color:white;
@@ -129,21 +117,20 @@ nav a{
 
 .contact{
   background:white;
-  padding:50px 20px;
   text-align:center;
+  padding:45px 20px;
 }
 
 .contact h2{
-  font-size:32px;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
 .whatsapp{
   display:inline-block;
-  margin-top:20px;
+  margin-top:18px;
   background:#111;
   color:white;
-  padding:14px 25px;
+  padding:13px 25px;
   border-radius:8px;
   text-decoration:none;
 }
@@ -152,7 +139,7 @@ footer{
   background:#111;
   color:white;
   text-align:center;
-  padding:25px;
+  padding:22px;
 }
 </style>
 </head>
@@ -161,7 +148,6 @@ footer{
 
 <header>
   <div class="logo">SOLDOUT05</div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
@@ -169,193 +155,131 @@ footer{
   </nav>
 </header>
 
-
 <section class="hero" id="home">
-
   <h1>Welcome to Soldout05</h1>
-
   <p>Wear Your Vibe ❤️</p>
-
-  <a href="#products" class="shop-btn">
-    Shop Now
-  </a>
-
+  <a href="#products" class="shop">Shop Now</a>
 </section>
-
 
 <section class="products" id="products">
+<h2>Our Products</h2>
 
-  <h2>Our Products</h2>
+<div class="grid">
 
-  <div class="product-grid">
+<!-- 1 -->
+<div class="card">
+<img src="IMG-20260725-WA0012.jpg">
+<h3>Red T-Shirt</h3>
+<div class="price">₹499</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Red%20T-Shirt%20for%20%E2%82%B9499" target="_blank">Buy Now</a>
+</div>
 
+<!-- 2 -->
+<div class="card">
+<img src="IMG-20260725-WA0013.jpg">
+<h3>Black Track Pant</h3>
+<div class="price">₹699</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Track%20Pant%20for%20%E2%82%B9699" target="_blank">Buy Now</a>
+</div>
 
-    <!-- PRODUCT 1 -->
-    <div class="product">
+<!-- 3 -->
+<div class="card">
+<img src="IMG-20260725-WA0015.jpg">
+<h3>Brown Casual Pant</h3>
+<div class="price">₹799</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Brown%20Casual%20Pant%20for%20%E2%82%B9799" target="_blank">Buy Now</a>
+</div>
 
-      <img src="red-tshirt.jpg" alt="Red T-Shirt">
+<!-- 4 -->
+<div class="card">
+<img src="IMG-20260725-WA0017.jpg">
+<h3>Beige T-Shirt</h3>
+<div class="price">₹499</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Beige%20T-Shirt%20for%20%E2%82%B9499" target="_blank">Buy Now</a>
+</div>
 
-      <h3>Red Tommy T-Shirt</h3>
+<!-- 5 -->
+<div class="card">
+<img src="IMG-20260725-WA0022.jpg">
+<h3>Casual Pants</h3>
+<div class="price">₹699</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Casual%20Pants%20for%20%E2%82%B9699" target="_blank">Buy Now</a>
+</div>
 
-      <div class="price">₹499</div>
+<!-- 6 -->
+<div class="card">
+<img src="IMG-20260817-WA0006.jpg">
+<h3>Purple T-Shirt</h3>
+<div class="price">₹499</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Purple%20T-Shirt%20for%20%E2%82%B9499" target="_blank">Buy Now</a>
+</div>
 
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Red%20Tommy%20T-Shirt%20%E2%82%B9499"
-      target="_blank">
-        Buy Now
-      </a>
+<!-- 7 -->
+<div class="card">
+<img src="IMG-20260820-WA0000.jpg">
+<h3>Black Track Pant</h3>
+<div class="price">₹699</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Track%20Pant%20for%20%E2%82%B9699" target="_blank">Buy Now</a>
+</div>
 
-    </div>
+<!-- 8 -->
+<div class="card">
+<img src="IMG-20260820-WA0002.jpg">
+<h3>Premium Track Pant</h3>
+<div class="price">₹799</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Premium%20Track%20Pant%20for%20%E2%82%B9799" target="_blank">Buy Now</a>
+</div>
 
+<!-- 9 -->
+<div class="card">
+<img src="IMG-20260820-WA0006.jpg">
+<h3>Black Polo T-Shirt</h3>
+<div class="price">₹599</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Polo%20T-Shirt%20for%20%E2%82%B9599" target="_blank">Buy Now</a>
+</div>
 
-    <!-- PRODUCT 2 -->
-    <div class="product">
+<!-- 10 -->
+<div class="card">
+<img src="IMG-20260820-WA0008.jpg">
+<h3>Black Casual Wear</h3>
+<div class="price">₹599</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Casual%20Wear%20for%20%E2%82%B9599" target="_blank">Buy Now</a>
+</div>
 
-      <img src="black-track-pant.jpg" alt="Black Track Pant">
+<!-- 11 -->
+<div class="card">
+<img src="IMG-20260820-WA0009.jpg">
+<h3>Sports Wear</h3>
+<div class="price">₹699</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Sports%20Wear%20for%20%E2%82%B9699" target="_blank">Buy Now</a>
+</div>
 
-      <h3>Black Track Pant</h3>
+<!-- 12 -->
+<div class="card">
+<img src="IMG-20260820-WA0010.jpg">
+<h3>Premium Clothing</h3>
+<div class="price">₹799</div>
+<a class="buy" href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Premium%20Clothing%20for%20%E2%82%B9799" target="_blank">Buy Now</a>
+</div>
 
-      <div class="price">₹699</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Track%20Pant%20%E2%82%B9699"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-
-    <!-- PRODUCT 3 -->
-    <div class="product">
-
-      <img src="brown-pant.jpg" alt="Brown Pant">
-
-      <h3>Brown Casual Pant</h3>
-
-      <div class="price">₹799</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Brown%20Casual%20Pant%20%E2%82%B9799"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-
-    <!-- PRODUCT 4 -->
-    <div class="product">
-
-      <img src="beige-tshirt.jpg" alt="Beige T-Shirt">
-
-      <h3>Beige T-Shirt</h3>
-
-      <div class="price">₹499</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Beige%20T-Shirt%20%E2%82%B9499"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-
-    <!-- PRODUCT 5 -->
-    <div class="product">
-
-      <img src="purple-tshirt.jpg" alt="Purple T-Shirt">
-
-      <h3>Purple T-Shirt</h3>
-
-      <div class="price">₹499</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Purple%20T-Shirt%20%E2%82%B9499"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-
-    <!-- PRODUCT 6 -->
-    <div class="product">
-
-      <img src="black-polo.jpg" alt="Black Polo">
-
-      <h3>Black Polo T-Shirt</h3>
-
-      <div class="price">₹599</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Polo%20T-Shirt%20%E2%82%B9599"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-
-    <!-- PRODUCT 7 -->
-    <div class="product">
-
-      <img src="black-shorts.jpg" alt="Black Shorts">
-
-      <h3>Black Shorts</h3>
-
-      <div class="price">₹499</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Shorts%20%E2%82%B9499"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-
-    <!-- PRODUCT 8 -->
-    <div class="product">
-
-      <img src="adidas-pant.jpg" alt="Track Pant">
-
-      <h3>Premium Track Pant</h3>
-
-      <div class="price">₹799</div>
-
-      <a class="buy-btn"
-      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Premium%20Track%20Pant%20%E2%82%B9799"
-      target="_blank">
-        Buy Now
-      </a>
-
-    </div>
-
-  </div>
-
+</div>
 </section>
-
 
 <section class="contact" id="contact">
+<h2>Contact Soldout05</h2>
+<p>For orders and enquiries, contact us on WhatsApp.</p>
 
-  <h2>Contact Soldout05</h2>
-
-  <p>For orders and enquiries, contact us on WhatsApp.</p>
-
-  <a class="whatsapp"
-  href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20know%20more%20about%20your%20products."
-  target="_blank">
-    WhatsApp Us
-  </a>
-
+<a class="whatsapp"
+href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20know%20more%20about%20your%20products."
+target="_blank">
+WhatsApp Us
+</a>
 </section>
 
-
 <footer>
-  © 2026 Soldout05 Clothing Brand
+© 2026 Soldout05 Clothing Brand
 </footer>
 
 </body>
 </html>
+        
