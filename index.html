@@ -4,66 +4,218 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soldout05 - Online Shopping</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    .cart {
+      background: white;
+      color: #111;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .shop-btn {
+      display: inline-block;
+      background: #ff9900;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .products {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      padding-bottom: 20px;
+    }
+
+    .product-image {
+      height: 240px;
+      background: linear-gradient(135deg, #eeeeee, #cccccc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .buy-btn {
+      width: 100%;
+      border: none;
+      background: #ff9900;
+      color: white;
+      padding: 13px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background: #e68900;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
-    <div class="logo">Soldout05</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Soldout05</h1>
+    <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <h1>Welcome to Soldout05</h1>
-      <p>Shop your favourites online.</p>
-      <a class="button" href="#products">Shop Now</a>
-    </section>
+  <section class="hero">
+    <h2>Welcome to Soldout05</h2>
+    <p>Shop your favourite fashion products online.</p>
+    <a href="#products" class="shop-btn">Shop Now</a>
+  </section>
 
-    <section id="products">
-      <h2>Our Products</h2>
-      <div class="product-grid">
-        <article class="product">
-          <div class="product-image">Product 1</div>
-          <h3>Fashion Item</h3>
-          <p class="price">₹499</p>
-          <button onclick="buyNow('Fashion Item', 499)">Buy Now</button>
-        </article>
-        <article class="product">
-          <div class="product-image">Product 2</div>
-          <h3>Beauty Item</h3>
-          <p class="price">₹699</p>
-          <button onclick="buyNow('Beauty Item', 699)">Buy Now</button>
-        </article>
-        <article class="product">
-          <div class="product-image">Product 3</div>
-          <h3>Home Item</h3>
-          <p class="price">₹999</p>
-          <button onclick="buyNow('Home Item', 999)">Buy Now</button>
-        </article>
+  <section class="products" id="products">
+
+    <h2>🛍️ Our Products</h2>
+
+    <div class="product-grid">
+
+      <div class="product">
+        <div class="product-image">👕</div>
+        <div class="product-info">
+          <h3>T-Shirt</h3>
+          <div class="price">₹499</div>
+          <button class="buy-btn" onclick="addToCart('T-Shirt', 499)">
+            Buy Now
+          </button>
+        </div>
       </div>
-    </section>
 
-    <section id="payment" class="payment" hidden>
-      <h2>Complete Your Order</h2>
-      <p id="orderSummary"></p>
-      <img src="assets/payment-qr.jpg" alt="UPI payment QR code" class="qr">
-      <p>Scan the QR code with any UPI app to pay.</p>
-      <p><strong>UPI:</strong> sneha-103@ptyes</p>
-      <button onclick="confirmOrder()">I Have Paid</button>
-    </section>
+      <div class="product">
+        <div class="product-image">👔</div>
+        <div class="product-info">
+          <h3>Shirt</h3>
+          <div class="price">₹799</div>
+          <button class="buy-btn" onclick="addToCart('Shirt', 799)">
+            Buy Now
+          </button>
+        </div>
+      </div>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Email: snehatyagi236@gmail.com</p>
-      <p>Phone: 9286497081</p>
-    </section>
-  </main>
+      <div class="product">
+        <div class="product-image">👖</div>
+        <div class="product-info">
+          <h3>Men Pant</h3>
+          <div class="price">₹999</div>
+          <button class="buy-btn" onclick="addToCart('Men Pant', 999)">
+            Buy Now
+          </button>
+        </div>
+      </div>
 
-  <footer>© 2026 Soldout05. All rights reserved.</footer>
-  <script src="script.js"></script>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Soldout05 | Online Shopping</p>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart(product, price) {
+      cartCount++;
+      document.getElementById("cartCount").innerText = cartCount;
+
+      alert(
+        product + " cart me add ho gaya!\nPrice: ₹" + price
+      );
+    }
+  </script>
+
 </body>
-</html>
+</html>  
