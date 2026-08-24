@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soldout05 - Online Shopping</title>
+
+<title>Soldout05 Clothing Brand</title>
 
 <style>
 *{
@@ -15,33 +16,40 @@
 body{
   font-family:Arial,sans-serif;
   background:#f5f5f5;
-  color:#222;
+  color:#111;
 }
 
 header{
   background:#111;
   color:white;
-  padding:18px 25px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  text-align:center;
+  padding:25px 10px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .logo{
-  font-size:28px;
+  font-size:35px;
   font-weight:bold;
+  letter-spacing:2px;
+}
+
+nav{
+  margin-top:15px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:20px;
+  margin:0 15px;
+  font-size:17px;
 }
 
 .hero{
   background:white;
-  padding:70px 25px;
   text-align:center;
+  padding:70px 20px;
 }
 
 .hero h1{
@@ -50,97 +58,101 @@ nav a{
 }
 
 .hero p{
-  font-size:20px;
+  font-size:19px;
   margin-bottom:25px;
 }
 
-.button{
+.shop-btn{
   display:inline-block;
   background:#111;
   color:white;
-  padding:12px 25px;
+  padding:15px 35px;
+  border-radius:8px;
   text-decoration:none;
-  border-radius:6px;
+  font-weight:bold;
 }
 
 .products{
-  padding:40px 20px;
-  max-width:1100px;
+  padding:50px 20px;
+  max-width:1200px;
   margin:auto;
 }
 
 .products h2{
   text-align:center;
-  font-size:32px;
-  margin-bottom:30px;
+  font-size:35px;
+  margin-bottom:35px;
 }
 
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
 }
 
 .product{
   background:white;
-  padding:25px;
+  border-radius:15px;
+  padding:15px;
   text-align:center;
-  border-radius:10px;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
 }
 
-.product-image{
-  height:180px;
+.product img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:10px;
   background:#ddd;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:20px;
-  border-radius:8px;
-  font-size:50px;
 }
 
 .product h3{
+  margin:15px 0 8px;
   font-size:22px;
-  margin-bottom:10px;
 }
 
 .price{
-  font-size:24px;
+  font-size:22px;
   font-weight:bold;
-  margin:15px 0;
+  margin-bottom:15px;
 }
 
-.buy{
+.buy-btn{
   display:inline-block;
   background:#111;
   color:white;
-  padding:10px 20px;
-  border-radius:5px;
+  padding:12px 25px;
+  border-radius:7px;
   text-decoration:none;
+  font-weight:bold;
 }
 
 .contact{
+  background:white;
+  padding:50px 20px;
+  text-align:center;
+}
+
+.contact h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.whatsapp{
+  display:inline-block;
+  margin-top:20px;
+  background:#111;
+  color:white;
+  padding:14px 25px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+footer{
   background:#111;
   color:white;
   text-align:center;
-  padding:40px 20px;
-  margin-top:30px;
-}
-
-@media(max-width:600px){
-  header{
-    flex-direction:column;
-    gap:15px;
-  }
-
-  nav a{
-    margin:0 8px;
-  }
-
-  .hero h1{
-    font-size:32px;
-  }
+  padding:25px;
 }
 </style>
 </head>
@@ -148,7 +160,8 @@ nav a{
 <body>
 
 <header>
-  <div class="logo">Soldout05</div>
+  <div class="logo">SOLDOUT05</div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
@@ -156,49 +169,193 @@ nav a{
   </nav>
 </header>
 
-<main id="home">
 
-<section class="hero">
+<section class="hero" id="home">
+
   <h1>Welcome to Soldout05</h1>
-  <p>Shop your favourite fashion items online.</p>
-  <a class="button" href="#products">Shop Now</a>
+
+  <p>Wear Your Vibe ❤️</p>
+
+  <a href="#products" class="shop-btn">
+    Shop Now
+  </a>
+
 </section>
 
+
 <section class="products" id="products">
+
   <h2>Our Products</h2>
 
   <div class="product-grid">
 
-    <article class="product">
-      <div class="product-image">👕</div>
-      <h3>T-Shirt</h3>
-      <p class="price">₹499</p>
-      <a class="buy" href="#contact">Buy Now</a>
-    </article>
 
-    <article class="product">
-      <div class="product-image">👔</div>
-      <h3>Shirt</h3>
-      <p class="price">₹799</p>
-      <a class="buy" href="#contact">Buy Now</a>
-    </article>
+    <!-- PRODUCT 1 -->
+    <div class="product">
 
-    <article class="product">
-      <div class="product-image">👖</div>
-      <h3>Men Pant</h3>
-      <p class="price">₹999</p>
-      <a class="buy" href="#contact">Buy Now</a>
-    </article>
+      <img src="red-tshirt.jpg" alt="Red T-Shirt">
+
+      <h3>Red Tommy T-Shirt</h3>
+
+      <div class="price">₹499</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Red%20Tommy%20T-Shirt%20%E2%82%B9499"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 2 -->
+    <div class="product">
+
+      <img src="black-track-pant.jpg" alt="Black Track Pant">
+
+      <h3>Black Track Pant</h3>
+
+      <div class="price">₹699</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Track%20Pant%20%E2%82%B9699"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 3 -->
+    <div class="product">
+
+      <img src="brown-pant.jpg" alt="Brown Pant">
+
+      <h3>Brown Casual Pant</h3>
+
+      <div class="price">₹799</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Brown%20Casual%20Pant%20%E2%82%B9799"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 4 -->
+    <div class="product">
+
+      <img src="beige-tshirt.jpg" alt="Beige T-Shirt">
+
+      <h3>Beige T-Shirt</h3>
+
+      <div class="price">₹499</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Beige%20T-Shirt%20%E2%82%B9499"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 5 -->
+    <div class="product">
+
+      <img src="purple-tshirt.jpg" alt="Purple T-Shirt">
+
+      <h3>Purple T-Shirt</h3>
+
+      <div class="price">₹499</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Purple%20T-Shirt%20%E2%82%B9499"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 6 -->
+    <div class="product">
+
+      <img src="black-polo.jpg" alt="Black Polo">
+
+      <h3>Black Polo T-Shirt</h3>
+
+      <div class="price">₹599</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Polo%20T-Shirt%20%E2%82%B9599"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 7 -->
+    <div class="product">
+
+      <img src="black-shorts.jpg" alt="Black Shorts">
+
+      <h3>Black Shorts</h3>
+
+      <div class="price">₹499</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Black%20Shorts%20%E2%82%B9499"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
+
+
+    <!-- PRODUCT 8 -->
+    <div class="product">
+
+      <img src="adidas-pant.jpg" alt="Track Pant">
+
+      <h3>Premium Track Pant</h3>
+
+      <div class="price">₹799</div>
+
+      <a class="buy-btn"
+      href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20buy%20Premium%20Track%20Pant%20%E2%82%B9799"
+      target="_blank">
+        Buy Now
+      </a>
+
+    </div>
 
   </div>
+
 </section>
 
-</main>
 
 <section class="contact" id="contact">
+
   <h2>Contact Soldout05</h2>
-  <p>Order ke liye humse contact karein.</p>
+
+  <p>For orders and enquiries, contact us on WhatsApp.</p>
+
+  <a class="whatsapp"
+  href="https://wa.me/919286497081?text=Hello%20Soldout05%2C%20I%20want%20to%20know%20more%20about%20your%20products."
+  target="_blank">
+    WhatsApp Us
+  </a>
+
 </section>
+
+
+<footer>
+  © 2026 Soldout05 Clothing Brand
+</footer>
 
 </body>
 </html>
