@@ -279,7 +279,32 @@ WhatsApp Us
 <footer>
 © 2026 Soldout05 Clothing Brand
 </footer>
+<script>
+function openOrder(product, price) {
+  let name = prompt("Apna naam likhiye:");
+  if (!name) return;
 
+  let phone = prompt("Apna mobile number likhiye:");
+  if (!phone) return;
+
+  let address = prompt("Apna delivery address likhiye:");
+  if (!address) return;
+
+  let message =
+    "🛍️ NEW ORDER - SOLDOUT05\n\n" +
+    "Product: " + product + "\n" +
+    "Price: ₹" + price + "\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + phone + "\n" +
+    "Address: " + address;
+
+  window.open(
+    "https://wa.me/919286497081?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
 </body>
 </html>
         
