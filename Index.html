@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soldout05 - Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Soldout05</h1>
+    <p>Online Shopping Website</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="#payment">Payment</a>
+  </nav>
+
+  <main id="home">
+
+    <section class="hero">
+      <h2>Welcome to Soldout05</h2>
+      <p>Shop your favourite products online.</p>
+      <button onclick="showMessage()">Shop Now</button>
+    </section>
+
+    <section id="products">
+      <h2>Our Products</h2>
+
+      <div class="products">
+
+        <div class="product">
+          <h3>Product 1</h3>
+          <p>Beautiful product for you.</p>
+          <strong>₹499</strong>
+          <button onclick="buyProduct('Product 1')">Buy Now</button>
+        </div>
+
+        <div class="product">
+          <h3>Product 2</h3>
+          <p>Quality product at best price.</p>
+          <strong>₹799</strong>
+          <button onclick="buyProduct('Product 2')">Buy Now</button>
+        </div>
+
+        <div class="product">
+          <h3>Product 3</h3>
+          <p>New collection available.</p>
+          <strong>₹999</strong>
+          <button onclick="buyProduct('Product 3')">Buy Now</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="payment">
+      <h2>Payment</h2>
+      <p>Scan the QR code to make payment.</p>
+
+      <img src="payment-qr-1.jpg" alt="Payment QR Code" class="qr">
+
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: snehatyagi236@gmail.com</p>
+      <p>Phone: 9286497081</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Soldout05. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
