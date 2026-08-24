@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soldout05 - Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Soldout05</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <h1>Welcome to Soldout05</h1>
+      <p>Shop your favourites online.</p>
+      <a class="button" href="#products">Shop Now</a>
+    </section>
+
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <article class="product">
+          <div class="product-image">Product 1</div>
+          <h3>Fashion Item</h3>
+          <p class="price">₹499</p>
+          <button onclick="buyNow('Fashion Item', 499)">Buy Now</button>
+        </article>
+        <article class="product">
+          <div class="product-image">Product 2</div>
+          <h3>Beauty Item</h3>
+          <p class="price">₹699</p>
+          <button onclick="buyNow('Beauty Item', 699)">Buy Now</button>
+        </article>
+        <article class="product">
+          <div class="product-image">Product 3</div>
+          <h3>Home Item</h3>
+          <p class="price">₹999</p>
+          <button onclick="buyNow('Home Item', 999)">Buy Now</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="payment" class="payment" hidden>
+      <h2>Complete Your Order</h2>
+      <p id="orderSummary"></p>
+      <img src="assets/payment-qr.jpg" alt="UPI payment QR code" class="qr">
+      <p>Scan the QR code with any UPI app to pay.</p>
+      <p><strong>UPI:</strong> sneha-103@ptyes</p>
+      <button onclick="confirmOrder()">I Have Paid</button>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: snehatyagi236@gmail.com</p>
+      <p>Phone: 9286497081</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Soldout05. All rights reserved.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
