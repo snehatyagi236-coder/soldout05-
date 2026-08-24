@@ -305,6 +305,43 @@ function openOrder(product, price) {
   );
 }
 </script>
+  <script>
+function openOrder(product, price) {
+  let size = prompt("Size choose karein: S / M / L / XL");
+  if (!size) return;
+
+  let quantity = prompt("Quantity likhiye:");
+  if (!quantity) return;
+
+  let name = prompt("Apna naam likhiye:");
+  if (!name) return;
+
+  let phone = prompt("Apna mobile number likhiye:");
+  if (!phone) return;
+
+  let address = prompt("Apna delivery address likhiye:");
+  if (!address) return;
+
+  let total = price * Number(quantity);
+
+  let message =
+    "🛍️ NEW ORDER - SOLDOUT05\n\n" +
+    "Product: " + product + "\n" +
+    "Size: " + size + "\n" +
+    "Quantity: " + quantity + "\n" +
+    "Price: ₹" + price + "\n" +
+    "Total: ₹" + total + "\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + phone + "\n" +
+    "Address: " + address;
+
+  window.open(
+    "https://wa.me/919286497081?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+  </script>
 </body>
 </html>
         
