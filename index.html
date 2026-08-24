@@ -340,7 +340,51 @@ function openOrder(product, price) {
     encodeURIComponent(message),
     "_blank"
   );
-}
+}document.querySelectorAll(".buy").forEach(function(button) {
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const card = button.closest(".card");
+    const product = card.querySelector("h3").innerText;
+    const priceText = card.querySelector(".price").innerText;
+    const price = Number(priceText.replace(/[^\d]/g, ""));
+
+    const size = prompt("Size likhiye (S, M, L, XL):");
+    if (!size) return;
+
+    const quantity = prompt("Quantity likhiye:");
+    if (!quantity) return;
+
+    const name = prompt("Apna naam likhiye:");
+    if (!name) return;
+
+    const phone = prompt("Apna mobile number likhiye:");
+    if (!phone) return;
+
+    const address = prompt("Apna delivery address likhiye:");
+    if (!address) return;
+
+    const total = price * Number(quantity);
+
+    const message =
+      "🛍️ NEW ORDER - SOLDOUT05\n\n" +
+      "Product: " + product + "\n" +
+      "Size: " + size + "\n" +
+      "Quantity: " + quantity + "\n" +
+      "Price: ₹" + price + "\n" +
+      "Total: ₹" + total + "\n" +
+      "Name: " + name + "\n" +
+      "Mobile: " + phone + "\n" +
+      "Address: " + address;
+
+    window.open(
+      "https://wa.me/YOURNUMBER?text=" +
+      encodeURIComponent(message),
+      "_blank"
+    );
+  });
+});
+    
   </script>
 
 </body>
