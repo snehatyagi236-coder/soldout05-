@@ -1,230 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Soldout05 Clothing</title>
+<title>Soldout05 | Clothing Store</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      background: #f5f5f5;
-      color: #111;
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#111;
+}
 
-    header {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
+header{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:28px 15px;
+}
 
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
+header h1{
+  font-size:38px;
+  margin-bottom:8px;
+}
 
-    header p {
-      font-size: 15px;
-    }
+header p{
+  font-size:16px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 35px 15px;
-      background: white;
-    }
+nav{
+  background:white;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:15px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 8px #ddd;
+}
 
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+nav a{
+  text-decoration:none;
+  color:#111;
+  font-weight:bold;
+}
 
-    .hero p {
-      color: #555;
-    }
+.hero{
+  text-align:center;
+  background:white;
+  padding:35px 15px;
+}
 
-    .products {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 15px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+.hero h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
 
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.10);
-    }
+.hero p{
+  color:#555;
+}
 
-    .product-image {
-      height: 210px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #222, #777);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+.section-title{
+  text-align:center;
+  margin:35px 0 20px;
+  font-size:28px;
+}
 
-    .card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  max-width:1000px;
+  margin:auto;
+  padding:15px;
+}
 
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+.card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 3px 12px #ddd;
+  padding-bottom:15px;
+}
 
-    .buy-btn {
-      width: 100%;
-      border: none;
-      background: #111;
-      color: white;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 17px;
-      cursor: pointer;
-    }
+.card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  display:block;
+}
 
-    .buy-btn:active {
-      transform: scale(0.98);
-    }
+.card h3{
+  padding:14px 12px 5px;
+  font-size:20px;
+}
 
-    .contact {
-      background: white;
-      text-align: center;
-      padding: 40px 15px;
-      margin-top: 10px;
-    }
+.price{
+  padding:0 12px 12px;
+  font-size:20px;
+  font-weight:bold;
+}
 
-    .contact h2 {
-      margin-bottom: 10px;
-    }
+.buy{
+  display:block;
+  width:calc(100% - 24px);
+  margin:auto;
+  padding:13px;
+  border:none;
+  border-radius:8px;
+  background:#111;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .whatsapp {
-      display: inline-block;
-      margin-top: 20px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 14px 25px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+.buy:hover{
+  background:#333;
+}
 
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      margin-top: 20px;
-    }
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:40px;
+}
 
-    /* ORDER FORM */
+#orderBox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
 
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      z-index: 999;
-      padding: 15px;
-      overflow-y: auto;
-    }
+.orderForm{
+  background:white;
+  width:100%;
+  max-width:400px;
+  border-radius:15px;
+  padding:25px;
+}
 
-    .modal-box {
-      background: white;
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 18px;
-    }
+.orderForm h2{
+  margin-bottom:15px;
+}
 
-    .modal-box h2 {
-      margin-bottom: 8px;
-    }
+.orderForm input,
+.orderForm select{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #ccc;
+  border-radius:7px;
+}
 
-    .selected-product {
-      background: #f1f1f1;
-      padding: 12px;
-      border-radius: 10px;
-      margin: 15px 0;
-      font-weight: bold;
-    }
+.confirm{
+  width:100%;
+  padding:13px;
+  margin-top:10px;
+  border:none;
+  border-radius:7px;
+  background:#111;
+  color:white;
+  font-weight:bold;
+}
 
-    label {
-      display: block;
-      margin-top: 13px;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
+.close{
+  float:right;
+  font-size:25px;
+  cursor:pointer;
+}
 
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ccc;
-      border-radius: 9px;
-      font-size: 16px;
-    }
+@media(max-width:650px){
+  .products{
+    grid-template-columns:1fr;
+  }
 
-    textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
+  .card img{
+    height:380px;
+  }
 
-    .total {
-      margin-top: 18px;
-      padding: 14px;
-      background: #111;
-      color: white;
-      border-radius: 10px;
-      font-size: 19px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .place-order {
-      width: 100%;
-      margin-top: 15px;
-      padding: 15px;
-      background: #25D366;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close-btn {
-      width: 100%;
-      margin-top: 10px;
-      padding: 13px;
-      background: #ddd;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  header h1{
+    font-size:32px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -234,301 +207,177 @@
   <p>Trendy Clothing Brand</p>
 </header>
 
+<nav>
+  <a href="#tshirts">T-Shirts</a>
+  <a href="#lowers">Lowers</a>
+</nav>
+
 <section class="hero">
   <h2>Welcome to Soldout05</h2>
   <p>Shop your favourite clothes at the best prices.</p>
 </section>
 
-<section class="products">
+<!-- T-SHIRTS -->
 
-  <!-- PRODUCT 1 -->
+<h2 class="section-title" id="tshirts">T-Shirts</h2>
+
+<div class="products">
+
   <div class="card">
-    <div class="product-image">
-      T-SHIRT
-    </div>
-
-    <h3>Purple T-Shirt</h3>
-
+    <img src="tshirt1.jpg" alt="Brown T-Shirt">
+    <h3>Brown Printed T-Shirt</h3>
     <div class="price">₹499</div>
-
-    <button
-      class="buy-btn"
-      onclick="openOrder('Purple T-Shirt', 499)">
-      Buy Now
-    </button>
+    <button class="buy" onclick="openOrder('Brown Printed T-Shirt')">Buy Now</button>
   </div>
 
-
-  <!-- PRODUCT 2 -->
   <div class="card">
-    <div class="product-image">
-      TRACK PANT
-    </div>
+    <img src="tshirt2.jpg" alt="Red T-Shirt">
+    <h3>Red Tommy T-Shirt</h3>
+    <div class="price">₹499</div>
+    <button class="buy" onclick="openOrder('Red Tommy T-Shirt')">Buy Now</button>
+  </div>
 
-    <h3>Black Track Pant</h3>
+  <div class="card">
+    <img src="tshirt3.jpg" alt="Purple T-Shirt">
+    <h3>Purple Printed T-Shirt</h3>
+    <div class="price">₹499</div>
+    <button class="buy" onclick="openOrder('Purple Printed T-Shirt')">Buy Now</button>
+  </div>
 
+  <div class="card">
+    <img src="tshirt4.jpg" alt="Maroon T-Shirt">
+    <h3>Maroon T-Shirt</h3>
+    <div class="price">₹499</div>
+    <button class="buy" onclick="openOrder('Maroon T-Shirt')">Buy Now</button>
+  </div>
+
+  <div class="card">
+    <img src="tshirt5.jpg" alt="Black Polo T-Shirt">
+    <h3>Black Polo T-Shirt</h3>
+    <div class="price">₹599</div>
+    <button class="buy" onclick="openOrder('Black Polo T-Shirt')">Buy Now</button>
+  </div>
+
+</div>
+
+<!-- LOWERS -->
+
+<h2 class="section-title" id="lowers">Lowers</h2>
+
+<div class="products">
+
+  <div class="card">
+    <img src="lower1.jpg" alt="Black Track Lower">
+    <h3>Black Track Lower</h3>
     <div class="price">₹699</div>
-
-    <button
-      class="buy-btn"
-      onclick="openOrder('Black Track Pant', 699)">
-      Buy Now
-    </button>
+    <button class="buy" onclick="openOrder('Black Track Lower')">Buy Now</button>
   </div>
 
-
-  <!-- PRODUCT 3 -->
   <div class="card">
-    <div class="product-image">
-      PREMIUM
-    </div>
-
-    <h3>Premium Track Pant</h3>
-
-    <div class="price">₹799</div>
-
-    <button
-      class="buy-btn"
-      onclick="openOrder('Premium Track Pant', 799)">
-      Buy Now
-    </button>
+    <img src="lower2.jpg" alt="Black Printed Lower">
+    <h3>Black Printed Lower</h3>
+    <div class="price">₹699</div>
+    <button class="buy" onclick="openOrder('Black Printed Lower')">Buy Now</button>
   </div>
 
-</section>
+  <div class="card">
+    <img src="lower3.jpg" alt="Brown Lower">
+    <h3>Brown Sports Lower</h3>
+    <div class="price">₹699</div>
+    <button class="buy" onclick="openOrder('Brown Sports Lower')">Buy Now</button>
+  </div>
 
+  <div class="card">
+    <img src="lower4.jpg" alt="Grey Lower">
+    <h3>Grey Printed Lower</h3>
+    <div class="price">₹699</div>
+    <button class="buy" onclick="openOrder('Grey Printed Lower')">Buy Now</button>
+  </div>
 
-<section class="contact">
-
-  <h2>Contact Soldout05</h2>
-
-  <p>
-    For orders and enquiries, contact us on WhatsApp.
-  </p>
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/919286497081"
-    target="_blank">
-    WhatsApp Us
-  </a>
-
-</section>
-
-
-<footer>
-  © 2026 Soldout05 Clothing Brand
-</footer>
-
+</div>
 
 <!-- ORDER FORM -->
 
-<div class="modal" id="orderModal">
+<div id="orderBox">
 
-  <div class="modal-box">
+  <div class="orderForm">
+
+    <span class="close" onclick="closeOrder()">×</span>
 
     <h2>Place Your Order</h2>
 
-    <div class="selected-product" id="selectedProduct">
-      Product
-    </div>
+    <p id="selectedProduct"></p>
 
+    <input type="text" id="name" placeholder="Your Name">
 
-    <label>Size</label>
+    <input type="tel" id="phone" placeholder="Mobile Number">
+
+    <input type="text" id="address" placeholder="Delivery Address">
 
     <select id="size">
       <option value="">Select Size</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-      <option value="XXL">XXL</option>
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+      <option>XL</option>
+      <option>XXL</option>
     </select>
 
-
-    <label>Quantity</label>
-
-    <input
-      type="number"
-      id="quantity"
-      value="1"
-      min="1"
-      oninput="calculateTotal()">
-
-
-    <label>Your Name</label>
-
-    <input
-      type="text"
-      id="name"
-      placeholder="Apna naam likhiye">
-
-
-    <label>Mobile Number</label>
-
-    <input
-      type="tel"
-      id="phone"
-      placeholder="Apna mobile number likhiye">
-
-
-    <label>Delivery Address</label>
-
-    <textarea
-      id="address"
-      placeholder="Apna complete delivery address likhiye"></textarea>
-
-
-    <div class="total" id="total">
-      Total: ₹0
-    </div>
-
-
-    <button
-      class="place-order"
-      onclick="placeOrder()">
-      Order on WhatsApp
-    </button>
-
-
-    <button
-      class="close-btn"
-      onclick="closeOrder()">
-      Cancel
+    <button class="confirm" onclick="placeOrder()">
+      Confirm Order
     </button>
 
   </div>
 
 </div>
 
+<footer>
+  <p>© 2026 Soldout05</p>
+  <p>Trendy Clothing Brand</p>
+</footer>
 
 <script>
 
-  let selectedProduct = "";
-  let selectedPrice = 0;
+let selectedProduct = "";
 
+function openOrder(product){
 
-  function openOrder(product, price) {
+  selectedProduct = product;
 
-    selectedProduct = product;
-    selectedPrice = price;
+  document.getElementById("selectedProduct").innerText =
+    "Product: " + product;
 
-    document.getElementById("selectedProduct").innerText =
-      product + " - ₹" + price;
+  document.getElementById("orderBox").style.display = "flex";
+}
 
-    document.getElementById("orderModal").style.display = "block";
+function closeOrder(){
 
-    calculateTotal();
+  document.getElementById("orderBox").style.display = "none";
+}
+
+function placeOrder(){
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+  let size = document.getElementById("size").value;
+
+  if(name === "" || phone === "" || address === "" || size === ""){
+    alert("Please fill all details.");
+    return;
   }
 
+  alert(
+    "Order received!\\n\\n" +
+    "Product: " + selectedProduct + "\\n" +
+    "Name: " + name + "\\n" +
+    "Size: " + size
+  );
 
-  function closeOrder() {
-
-    document.getElementById("orderModal").style.display = "none";
-
-  }
-
-
-  function calculateTotal() {
-
-    let quantity =
-      Number(document.getElementById("quantity").value) || 1;
-
-    let total = selectedPrice * quantity;
-
-    document.getElementById("total").innerText =
-      "Total: ₹" + total;
-
-  }
-
-
-  function placeOrder() {
-
-    let size =
-      document.getElementById("size").value;
-
-    let quantity =
-      document.getElementById("quantity").value;
-
-    let name =
-      document.getElementById("name").value.trim();
-
-    let phone =
-      document.getElementById("phone").value.trim();
-
-    let address =
-      document.getElementById("address").value.trim();
-
-
-    if (!size) {
-      alert("Please select your size.");
-      return;
-    }
-
-
-    if (!quantity || quantity < 1) {
-      alert("Please enter quantity.");
-      return;
-    }
-
-
-    if (!name) {
-      alert("Please enter your name.");
-      return;
-    }
-
-
-    if (!phone) {
-      alert("Please enter your mobile number.");
-      return;
-    }
-
-
-    if (!/^[0-9]{10}$/.test(phone)) {
-      alert("Please enter a valid 10 digit mobile number.");
-      return;
-    }
-
-
-    if (!address) {
-      alert("Please enter your delivery address.");
-      return;
-    }
-
-
-    let total =
-      selectedPrice * Number(quantity);
-
-
-    let message =
-      "🛍️ NEW ORDER - SOLDOUT05\n\n" +
-
-      "Product: " + selectedProduct + "\n" +
-
-      "Size: " + size + "\n" +
-
-      "Quantity: " + quantity + "\n" +
-
-      "Price: ₹" + selectedPrice + "\n" +
-
-      "Total: ₹" + total + "\n\n" +
-
-      "Name: " + name + "\n" +
-
-      "Mobile: " + phone + "\n" +
-
-      "Address: " + address;
-
-
-    let whatsappURL =
-      "https://wa.me/919286497081?text=" +
-      encodeURIComponent(message);
-
-
-    window.location.href = whatsappURL;
-
-  }
+  closeOrder();
+}
 
 </script>
 
 </body>
-</html>
+      </html>
